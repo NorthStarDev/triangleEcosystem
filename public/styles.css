@@ -1,0 +1,174 @@
+body {
+  font-family: 'Helvetica';
+  background-color: lightgray;
+  align-content: center;
+}
+
+div {
+  display: block;
+}
+
+#page {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  padding-bottom: 20px;
+}
+
+#logo {
+  height: 200px;
+}
+
+.subsection {
+  text-align: center;
+  height: 245px;
+  border-top: 10px;
+}
+.subsection > h1 {
+  display: inline-block;
+  background-color: #ff7652;
+  font-family: 'Helvetica', serif;
+  margin-top: 10px;
+  font-size: 25px;
+  padding: 10px;
+  color: white;
+  border-radius: 15px;
+}
+
+#Map {
+  display: inline-block;
+  height: 900px;
+  margin-top: 50px;
+}
+
+#overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+#popup {
+  border: 1px solid #ccc;
+  border-color: .rgb(0,0,.2);
+  border-radius: 3px;
+  font-family: 'Helvetica', serif;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: black;
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px; /*Half the value of width to center div*/
+  margin-top: -250px; /*Half the value of height to center div*/
+  z-index: 200;
+}
+
+#popupHeader {
+  font-family: "Helvetica", serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#popupclose {
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+.popupcontent {
+  padding: 15px;
+}
+
+#button {
+  cursor: pointer;
+}
+
+.btn {
+  background-color: #ff7652;
+  border-color: lightgray;
+  border-width: 0px;
+  color: #fff;
+  font-family: 'Helvetica', serif;
+  font-weight: bold;
+  font-size: 25px;
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  width: 90px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  z-index: 900;
+  border-radius: 15px;
+  transition: all 0.5s;
+  padding: 5px;
+}
+
+.btn span {
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  transition: 0.5s;
+}
+
+.btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn:hover span {
+  padding-right: 25px;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#submit {
+  background-color: white;
+  color: black;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 7px;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #fff;
+  stroke-width: 6px;
+}
+.node--root {
+  fill: white;
+}
+.node--leaf {
+  fill: white;
+}
+
+.label {
+  font-family: "Helvetica"; font-size: 12.5px;
+  font-weight: bold;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
+
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}

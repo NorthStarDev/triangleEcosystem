@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>CED Map</title>
+  <!-- All this mobile friendly nonsense-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Triangle Map</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+            <i class="material-icons">search</i>
+          </label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="search">
+            <label class="mdl-textfield__label" for="search">Enter your query...</label>
+          </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+          <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+          <li class="mdl-menu__item">About</li>
+          <li class="mdl-menu__item">Contact</li>
+          <li class="mdl-menu__item">Legal information</li>
+        </ul>
+      </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <header class="demo-drawer-header">
+        <img src="images/user.jpg" class="demo-avatar">
+        <div class="demo-avatar-dropdown">
+          <span>hello@example.com</span>
+          <div class="mdl-layout-spacer"></div>
+          <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">arrow_drop_down</i>
+            <span class="visuallyhidden">Accounts</span>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+            <li class="mdl-menu__item">hello@example.com</li>
+            <li class="mdl-menu__item">info@example.com</li>
+            <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+          </ul>
+        </div>
+      </header>
+      <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
+        <div class="mdl-layout-spacer"></div>
+        <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+      </nav>
+    </div>
+    <!-- Beginning of the dashboard content -->
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div class="mdl-grid demo-content">
+        <div class="demo-map mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+          <svg width="800" height="800">
+          </svg>
+        </div>
+        <!-- Filter box for map-->
+        <div class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+          <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
+            <h3>Filter by Location</h3>
+            <ul>
+              <li>
+                <label for="chkbox1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                  <input type="checkbox" id="chkbox1" class="mdl-checkbox__input">
+                  <span class="mdl-checkbox__label">Wake Forest</span>
+                </label>
+              </li>
+              <li>
+                <label for="chkbox2" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                  <input type="checkbox" id="chkbox2" class="mdl-checkbox__input">
+                  <span class="mdl-checkbox__label">Raleigh</span>
+                </label>
+              </li>
+              <li>
+                <label for="chkbox3" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                  <input type="checkbox" id="chkbox3" class="mdl-checkbox__input">
+                  <span class="mdl-checkbox__label">Durham</span>
+                </label>
+              </li>
+              <li>
+                <label for="chkbox4" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                  <input type="checkbox" id="chkbox4" class="mdl-checkbox__input">
+                  <span class="mdl-checkbox__label">Chapel Hill</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="overlay"></div>
+  <div id="popup">
+    <div class="popupcontrols">
+      <span id="popupclose">X</span>
+    </div>
+    <div class="popupcontent">
+      <section class="content">
+        <p class="content__lede">Fill out this form to add a new organization to the list.</p>
+        <form class="content__form contact-form">
+          Organization Title:<br>
+          <input type="text" name="title" value="" required><br><br>
+          Category:<br>
+          <select id="category" name="category" value="">
+            <option value="accelerators/incubators">Accelerators/Incubators</option>
+            <option value="meetUps">Meet Ups</option>
+            <option value="supportOrgs">Support Organizations</option>
+            <option value="funders">Funders</option>
+            <option value="universities">Universities</option>
+            <option value="corporate">Corporate</option>
+            <option value="co-working">Co-Working</option>
+          </select> <br><br>
+          Website:<br>
+          <input type="url" name="website"><br><br>
+          Location:<br> 
+          <input type="checkbox" name="durham" value="durham"/>Durham<br>
+          <input type="checkbox" name="raleigh" value="raleigh"/>Raleigh<br>
+          <input type="checkbox" name="wakeforest" value="wakeForest"/>Wake Forest<br>
+          <input type="checkbox" name="chapelhill" value="chapelHill"/>Chapel Hill<br>
+          <input type="checkbox" name="other" value="other"/>Other<br><br> 
+          Notes:<br>
+          <input type="text" name="notes"><br><br>
+          <input type="submit" name="submit" class="submit"><br>
+        </form>
+      </section>
+    </div>
+  </div>
+  <a id="add-bubble" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Add New Bubble</a>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script>
+
+    var config = {
+      apiKey: "AIzaSyDPYGK_soHS9DnlwPYfCyX_HwovtnnPs20",
+      authDomain: "triangleecosystem.firebaseapp.com",
+      databaseURL: "https://triangleecosystem.firebaseio.com",
+      projectId: "triangleecosystem",
+      storageBucket: "triangleecosystem.appspot.com",
+      messagingSenderId: "753421656447"
+    };
+    firebase.initializeApp(config);
+    function addBubbleToFirebase() {
+
+    }
+    var svg = d3.select("svg"),
+    margin = 5,
+    diameter = +svg.attr("width"),
+    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+    var color = d3.scaleLinear()
+    .domain([-1, 5])
+    .range(["hsl(180,80%,70%)", "hsl(230,20%,40%)"])
+    .interpolate(d3.interpolateHcl);
+
+    var pack = d3.pack()
+    .size([diameter - margin, diameter - margin])
+    .padding(2);
+
+    //var triangle = JSON.stringify("trianglepractice.json")
+    var triangle = {"children": [{"children": [{"location": "Durham", "size": 400, "name": "Ag Tech"}, {"location": "Durham", "size": 400, "name": "Biolabs"}, {"location": "Durham", "size": 400, "name": "Bootstrap Advisors"}, {"location": "RDU", "size": 400, "name": "Bunkerlabs"}, {"location": "Cary", "size": 400, "name": "Cofounders Capital"}, {"location": "RTP", "size": 400, "name": "Entredot"}, {"location": "RTP", "size": 400, "name": "First Flight Venture Center"}, {"location": "Durham", "size": 400, "name": "Groundworks Lab"}, {"location": "Chapel Hill", "size": 400, "name": "Launch Chapel Hill"}, {"location": "Raleigh", "size": 400, "name": "Innovators Program"}, {"location": "Durham", "size": 400, "name": "Stampede"}, {"location": "Raleigh", "size": 400, "name": "The Pink Ceiling"}, {"location": "Raleigh", "size": 400, "name": "Thinkhouse"}, {"location": "WakeForest", "size": 400, "name": "Wireless Center"}], "name": "Accelerators/Incubators"}, {"children": [{"location": "RTP", "size": 400, "name": "One Million Cups"}, {"location": "Durham", "size": 400, "name": "Exit Event"}, {"location": "RTP", "size": 400, "name": "R!ot"}, {"location": "RTP", "size": 400, "name": "RTP 180"}, {"location": "RDU", "size": 400, "name": "Start Up Grind"}, {"location": "RDU", "size": 400, "name": "Triangle Tech Breakfast"}, {"location": "Durham", "size": 400, "name": "Ag Tech Accelerator"}], "name": "Meet Ups"}, {"children": [{"location": "Durham, Chapel Hill", "size": 400, "name": "Blackstone Entrepreneurs"}, {"location": "RTP", "size": 400, "name": "NC Center of Innovation"}, {"location": "Durham", "size": 400, "name": "Council for Entrepreneurial Development"}, {"location": "RDU", "size": 400, "name": "Entrepreneurs Organization"}, {"location": "RTP", "size": 400, "name": "NC Biotech Center"}, {"location": "Durham", "size": 400, "name": "NC Idea"}, {"location": "RTP", "size": 400, "name": "North Carolina Biosciences Organization(NCBIO)"}, {"location": "Cary", "size": 400, "name": "Research Triangle Cleantech"}, {"location": "Raleigh", "size": 400, "name": "Small Business and Technology Development Center"}, {"location": "Durham", "size": 400, "name": "Soar Triangle"}, {"location": "Raleigh", "size": 300, "name": "Southeast Bio"}, {"location": "Roswell, GA", "size": 300, "name": "SE Medical Device Assn"}], "name": "Support Organizations"}, {"children": [{"location": "Chapel Hill", "size": 400, "name": "Carolina Angel Network"}, {"location": "Charleston, SC", "size": 400, "name": "Charleston Angel Partners"}, {"location": "Durham", "size": 400, "name": "Duke Angel Network"}, {"location": "RTP", "size": 400, "name": "IMAF-RTP"}, {"location": "Durham", "size": 400, "name": "Investors' Circle"}, {"location": "Winston Salem", "size": 400, "name": "Piedmont Angel Network(PAN)"}, {"location": "Durham", "size": 400, "name": "RTP Capital"}, {"location": "RTP", "size": 400, "name": "The Launch Place(RTP and Danville,VA)"}, {"location": "Raleigh", "size": 400, "name": "The Pink Ceiling & Pinkubator"}, {"location": "Chapel Hill", "size": 400, "name": "Triangle Angel Partners(TAP)"}, {"location": "Greenville, SC", "size": 400, "name": "Venture South"}, {"location": "Raleigh", "size": 400, "name": "Wolfpack Investor Network"}, {"location": "USA", "size": 400, "name": "Danville Angel Investors"}, {"location": "RTP", "size": 400, "name": "NC Biotech Center"}, {"location": "Durham", "size": 400, "name": "NCIDEA"}, {"location": "Raleigh", "size": 400, "name": "NCSU-Chancellor's Innovation Fund"}, {"location": "Washington, DC", "size": 400, "name": "SBIR/STTP"}, {"location": "RTP", "size": 400, "name": "Alexandria Real Estate Equities"}, {"location": "Durham", "size": 400, "name": "Bull City Venture Partners"}, {"location": "Cary", "size": 400, "name": "Cofounders Capital & Lab"}, {"location": "Durham", "size": 400, "name": "Echo Health Ventures"}, {"location": "RTP", "size": 400, "name": "Excelerate Health Ventures"}, {"location": "Raleigh", "size": 400, "name": "Full Tilt Capital"}, {"location": "Durham", "size": 400, "name": "Hatteras Venture Partners"}, {"location": "Durham", "size": 400, "name": "IDEA Fund Partners"}, {"location": "Durham", "size": 400, "name": "Pappas Capital"}, {"location": "Raleigh", "size": 400, "name": "Rex Health Ventures"}, {"location": "Raleigh", "size": 400, "name": "River Cities Capital Funds"}, {"location": "Durham", "size": 400, "name": "SJF Ventures"}, {"location": "Winston Salem", "size": 400, "name": "Tidewater Equity Partners"}], "name": "Funders"}, {"children": [{"children": [{"location": "Raleigh", "size": 400, "name": "Wolfpack Investor Network"}, {"location": "Raleigh", "size": 400, "name": "NCSU - Chancellor's Innovation Fund"}, {"location": "Raleigh", "size": 400, "name": "NCSU - Springboard Innovation Hub"}, {"location": "Raleigh", "size": 400, "name": "NCSU - Entrepreneurship Initiative/Garage"}], "name": "North Carolina State University"}, {"children": [{"location": "Durham", "size": 400, "name": "Duke Angel Network"}, {"location": "Durham", "size": 400, "name": "Duke - DUHATC"}, {"location": "Durham", "size": 400, "name": "Duke Innovation & Entrepreneurship Initiative"}, {"location": "Durham", "size": 400, "name": "Duke Startup Challenge"}], "name": "Duke University"}, {"children": [{"location": "Chapel Hill", "size": 400, "name": "Carolina Angel Network"}, {"location": "Chapel Hill", "size": 400, "name": "UNC - Carolina Challenge"}, {"location": "Chapel Hill", "size": 400, "name": "UNC - Carolina KickStart"}, {"location": "Chapel Hill", "size": 400, "name": "UNC - Launching the Ventur"}, {"location": "Chapel Hill", "size": 400, "name": "Launch Chapel Hill"}, {"location": "Chapel Hill", "size": 400, "name": "1789 Venture Lab"}], "name": "UNC Chapel Hill"}], "name": "Universities"}, {"children": [{"location": "USA", "size": 400, "name": "Citrix"}, {"location": "San Jose, CA", "size": 400, "name": "Cisco"}, {"location": "Raleigh", "size": 400, "name": "Cherokee"}, {"location": "RTP", "size": 400, "name": "Quintiles"}, {"location": "RTP", "size": 400, "name": "LabCorp"}, {"location": "RTP", "size": 400, "name": "Fidelity"}, {"location": "Raleigh", "size": 400, "name": "RedHat"}], "name": "Corporate"}, {"children": [{"location": "Carrboro", "size": 400, "name": "Perch"}, {"location": "Cary", "size": 400, "name": "Cofounders Capital & Lab"}, {"location": "Chapel Hill", "size": 400, "name": "1789 Venture Lab"}, {"location": "Durham", "size": 400, "name": "American Underground"}, {"location": "Durham", "size": 400, "name": "Biolabs"}, {"location": "Durham", "size": 400, "name": "iNvictus"}, {"location": "Raleigh", "size": 400, "name": "HQ"}, {"location": "Raleigh", "size": 400, "name": "Industrious"}, {"location": "Raleigh", "size": 400, "name": "Loading Dock"}, {"location": "Raleigh", "size": 400, "name": "Nest"}, {"location": "Raleigh", "size": 400, "name": "The Pink Ceiling & Pinkubator"}, {"location": "RTP", "size": 400, "name": "Frontier"}], "name": "Co-Working"}], "name": "Triangle Ecosystem"}
+    root = d3.hierarchy(triangle)
+    .sum(function(d) { return d.size; })
+    .sort(function(a, b) { return b.value - a.value; });
+
+    var focus = root,
+    nodes = pack(root).descendants(),
+    view;
+
+    var circle = g.selectAll("circle")
+    .data(nodes)
+    .enter().append("circle")
+    .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+    .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+    .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+
+    var text = g.selectAll("text")
+    .data(nodes)
+    .enter().append("text")
+    .attr("class", "label")
+    .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+    .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+    .text(function(d) { return d.data.name; });
+
+    var node = g.selectAll("circle,text");
+
+    svg
+    .style("background", color(-1))
+    .on("click", function() { zoom(root); });
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+      var focus0 = focus; focus = d;
+
+      var transition = d3.transition()
+      .duration(d3.event.altKey ? 7500 : 750)
+      .tween("zoom", function(d) {
+        var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+        return function(t) { zoomTo(i(t)); };
+      });
+
+      transition.selectAll("text")
+      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+      .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+      .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+      .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+    }
+
+    function zoomTo(v) {
+      var k = diameter / v[2]; view = v;
+      node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+      circle.attr("r", function(d) { return d.r * k; });
+    }
+    var closePopup = document.getElementById("popupclose");
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    var button = document.getElementById("add-bubble");
+    closePopup.onclick = function() {
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
+    };
+    button.onclick = function() {
+      popup.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

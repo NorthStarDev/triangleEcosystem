@@ -1,0 +1,530 @@
+{
+  "name": "Triangle Ecosystem",
+  "children": [
+    {
+      "name": "Accelerators/Incubators",
+      "children": [
+        {
+          "name": "Ag Tech",
+          "size": 175,
+          "location": "Durham"
+        },
+        {
+          "name": "Biolabs",
+          "size": 175,
+          "location": "Durham"
+        },
+        {
+          "name": "Bootstrap Advisors",
+          "size": 425,
+          "location": "Durham"
+        },
+        {
+          "name": "Bunkerlabs",
+          "size": 250,
+          "location": "RDU"
+        },
+        {
+          "name": "Cofounders Capital",
+          "size": 450,
+          "location": "Cary"
+        },
+        {
+          "name": "Entredot",
+          "size": 200,
+          "location": "RTP"
+        },
+        {
+          "name": "First Flight Venture Center",
+          "size": 675,
+          "location": "RTP"
+        },
+        {
+          "name": "Groundworks Lab",
+          "size": 375,
+          "location": "Durham"
+        },
+        {
+          "name": "Launch Chapel Hill",
+          "size": 450,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "Innovators Program",
+          "size": 450,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Stampede",
+          "size": 200,
+          "location": "Durham"
+        },
+        {
+          "name": "The Pink Ceiling",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Thinkhouse",
+          "size": 250,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Wireless Center",
+          "size": 375,
+          "location": "WakeForest"
+        }
+      ]
+    },
+    {
+      "name": "Meet Ups",
+      "children": [
+        {
+          "name": "One Million Cups",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Exit Event",
+          "size": 250,
+          "location": "Durham"
+        },
+        {
+          "name": "R!ot",
+          "size": 100,
+          "location": "RTP",
+          "children": [
+            {
+              "name": "The center of IoT in Raleigh",
+              "contactInfo": "919-204-5401"
+            }
+          ]
+        },
+        {
+          "name": "RTP 180",
+          "size": 175,
+          "location": "RTP"
+        },
+        {
+          "name": "Start Up Grind",
+          "size": 350,
+          "location": "RDU"
+        },
+        {
+          "name": "Triangle Tech Breakfast",
+          "size": 575,
+          "location": "RDU"
+        },
+        {
+          "name": "Ag Tech Accelerator",
+          "size": 475,
+          "location": "Durham"
+        }
+      ]
+    },
+    {
+      "name": "Support Organizations",
+      "children": [
+        {
+          "name": "Blackstone Entrepreneurs",
+          "size": 600,
+          "location": "Durham, Chapel Hill"
+        },
+        {
+          "name": "NC Center of Innovation",
+          "size": 575,
+          "location": "RTP"
+        },
+        {
+          "name": "Council for Entrepreneurial Development",
+          "size": 975,
+        },
+        {
+          "name": "NC Biotech Center",
+          "size": 425,
+          "location": "RTP"
+        },
+        {
+          "name": "NC Idea Foundation",
+          "size": 450,
+          "location": "Durham"
+        },
+        {
+          "name": "North Carolina Biosciences Organization(NCBIO)",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Research Triangle Cleantech",
+          "size": 400,
+          "location": "Cary"
+        },
+        {
+          "name": "Small Business and Technology Development Center",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Soar Triangle",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Southeast Bio",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "SE Medical Device Assn",
+          "size": 400,
+          "location": "Roswell, GA"
+        }
+      ]
+    },
+    {
+      "name": "Funders",
+      "children": [
+        {
+          "name": "Carolina Angel Network",
+          "size": 400,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "Charleston Angel Partners",
+          "size": 400,
+          "location": "Charleston, SC"
+        },
+        {
+          "name": "Duke Angel Network",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "IMAF-RTP",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Investors' Circle",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Piedmont Angel Network(PAN)",
+          "size": 400,
+          "location": "Winston Salem"
+        },
+        {
+          "name": "RTP Capital",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "The Launch Place(RTP and Danville,VA)",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "The Pink Ceiling & Pinkubator",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Triangle Angel Partners(TAP)",
+          "size": 400,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "Venture South",
+          "size": 400,
+          "location": "Greenville, SC"
+        },
+        {
+          "name": "Wolfpack Investor Network",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Danville Angel Investors",
+          "size": 400,
+          "location": "USA"
+        },
+        {
+          "name": "NC Biotech Center",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "NCIDEA",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "NCSU-Chancellor's Innovation Fund",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "SBIR/STTP",
+          "size": 400,
+          "location": "Washington, DC"
+        },
+        {
+          "name": "Alexandria Real Estate Equities",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Bull City Venture Partners",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Cofounders Capital & Lab",
+          "size": 400,
+          "location": "Cary"
+        },
+        {
+          "name": "Echo Health Ventures",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Excelerate Health Ventures",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Full Tilt Capital",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Hatteras Venture Partners",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "IDEA Fund Partners",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Pappas Capital",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Rex Health Ventures",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "River Cities Capital Funds",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "SJF Ventures",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Tidewater Equity Partners",
+          "size": 400,
+          "location": "Winston Salem"
+        }
+      ]
+    },
+    {
+      "name": "Universities",
+      "children": [
+        {
+          "name": "North Carolina State University",
+          "children": [
+            {
+              "name": "Wolfpack Investor Network",
+              "size": 400,
+              "location": "Raleigh"
+            },
+            {
+              "name": "NCSU - Chancellor's Innovation Fund",
+              "size": 400,
+              "location": "Raleigh"
+            },
+            {
+              "name": "NCSU - Springboard Innovation Hub",
+              "size": 400,
+              "location": "Raleigh"
+            },
+            {
+              "name": "NCSU - Entrepreneurship Initiative/Garage",
+              "size": 400,
+              "location": "Raleigh"
+            }
+          ]
+        },
+        {
+          "name": "Duke University",
+          "children": [
+            {
+              "name": "Duke Angel Network",
+              "size": 400,
+              "location": "Durham"
+            },
+            {
+              "name": "Duke - DUHATC",
+              "size": 400,
+              "location": "Durham"
+            },
+            {
+              "name": "Duke Innovation & Entrepreneurship Initiative",
+              "size": 400,
+              "location": "Durham"
+            },
+            {
+              "name": "Duke Startup Challenge",
+              "size": 400,
+              "location": "Durham"
+            }
+          ]
+        },
+        {
+          "name": "UNC Chapel Hill",
+          "children": [
+            {
+              "name": "Carolina Angel Network",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "UNC - Carolina Challenge",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "UNC - Carolina KickStart",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "UNC - Launching the Ventur",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "Launch Chapel Hill",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "1789 Venture Lab",
+              "size": 400,
+              "location": "Chapel Hill"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corporate",
+      "children": [
+        {
+          "name": "Citrix",
+          "size": 400,
+          "location": "USA"
+        },
+        {
+          "name": "Cisco",
+          "size": 400,
+          "location": "San Jose, CA"
+        },
+        {
+          "name": "Cherokee",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Quintiles",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "LabCorp",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Fidelity",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "RedHat",
+          "size": 400,
+          "location": "Raleigh"
+        }
+      ]
+    },
+    {
+      "name": "Co-Working",
+      "children": [
+        {
+          "name": "Perch",
+          "size": 400,
+          "location": "Carrboro"
+        },
+        {
+          "name": "Cofounders Capital & Lab",
+          "size": 400,
+          "location": "Cary"
+        },
+        {
+          "name": "1789 Venture Lab",
+          "size": 400,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "American Underground",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Biolabs",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "iNvictus",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "HQ",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Industrious",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Loading Dock",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Nest",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Frontier",
+          "size": 400,
+          "location": "RTP"
+        }
+      ]
+    }
+  ]
+}

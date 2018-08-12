@@ -1,0 +1,156 @@
+<<<<<<< HEAD
+.demo-card-wide.mdl-card{
+  width: 400px;
+  padding-left: 55px;
+  padding-right: 50px;
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background: #325C74; 
+}
+.demo-card-wide > .mdl-card__title {
+  color: #D3D3D3;
+  height: 200px;
+}
+.demo-card-wide > .mdl-card__menu{
+}
+.mdl-class__title{
+  color: #292726;
+  text-align: center;
+}
+.mdl-grid.center-items{
+  justify-content: center;
+  vertical-align: center;
+}
+
+.mdl-textfield__inputemail{
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#emailinput{
+  border-radius: 10px;
+  border: 2px solid #1de9b6;
+  padding: 20px;
+  width: 300px;
+  height: 50px;
+
+}
+
+.mdl-textfield__inputpassword{
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#passwordinput{
+  border-radius: 10px;
+  border: 2px solid #1de9b6;
+  padding: 20px;
+  width: 300px;
+  height: 50px;
+
+}
+.mdl-textfield__labellogin{
+  color: #f6f6f6;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.mdl-textfield__labelcreateaccount{
+  color: #f6f6f6;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.mdl-class__title{
+  color: #f6f6f6;
+  text-align: center;
+}
+body{
+  background-color: #fff;
+}
+
+.label {
+  font-family: Montserrat; font-family: 10px;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+=======
+.demo-card-wide.mdl-card{
+  width: 400px;
+  padding-left: 55px;
+  padding-right: 50px;
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background: #325C74; 
+}
+.demo-card-wide > .mdl-card__title {
+  color: #D3D3D3;
+  height: 200px;
+}
+.demo-card-wide > .mdl-card__menu{
+}
+.mdl-class__title{
+  color: #292726;
+  text-align: center;
+}
+.mdl-grid.center-items{
+  justify-content: center;
+  vertical-align: center;
+}
+
+.mdl-textfield__inputemail{
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#emailinput{
+  border-radius: 10px;
+  border: 2px solid #1de9b6;
+  padding: 20px;
+  width: 300px;
+  height: 50px;
+
+}
+
+.mdl-textfield__inputpassword{
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#passwordinput{
+  border-radius: 10px;
+  border: 2px solid #1de9b6;
+  padding: 20px;
+  width: 300px;
+  height: 50px;
+
+}
+.mdl-textfield__labellogin{
+  color: #f6f6f6;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.mdl-textfield__labelcreateaccount{
+  color: #f6f6f6;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.mdl-class__title{
+  color: #f6f6f6;
+  text-align: center;
+}
+body{
+  background-color: #fff;
+}
+
+.label {
+  font-family: Montserrat; font-family: 10px;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+>>>>>>> 4d6395457975d91df4f543f9ec5084fa10c4649a
+}

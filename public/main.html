@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<!--Bryan Cooper @ Root Management, LLC.-->
+<html lang="en">
+<head>
+	<title>Triangle Ecosystem</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="page">
+		<div class="subsection" id="head">
+			<div>
+				<img src="images/brand.jpg" id="logo">
+			</div>
+			<h1 id="HeadText">TRIANGLE ECOSYSTEM</h1>
+		</div>
+		<div class="subsection" id="Map">
+			<svg width="900" height="900" style="border-radius: 60px"></svg>
+		</div>
+	</div>
+	<div id="overlay"></div>
+	<div id="popup">
+		<div class="popupcontrols">
+			<span id="popupclose">X</span>
+		</div>
+		<div class="popupcontent">
+			<section class="content">
+				<p id="popupHeader">Add a Bubble to the Map</p>
+				<form class="content__form contact-form">
+					Organization Title:<br>
+					<input type="text" name="title" value="" required><br><br>
+					Category:<br>
+					<select id="category" name="category" value="">
+						<option value="accelerators/incubators">Accelerators/Incubators</option>
+						<option value="meetUps">Meet Ups</option>
+						<option value="supportOrgs">Support Organizations</option>
+						<option value="funders">Funders</option>
+						<option value="universities">Universities</option>
+						<option value="corporate">Corporate</option>
+						<option value="co-working">Co-Working</option>
+					</select> <br><br>
+					Website:<br>
+					<input type="url" name="website"><br><br>
+					Location:<br> 
+					<input type="checkbox" name="durham" value="durham"/>Durham<br>
+					<input type="checkbox" name="raleigh" value="raleigh"/>Raleigh<br>
+					<input type="checkbox" name="wakeforest" value="wakeForest"/>Wake Forest<br>
+					<input type="checkbox" name="chapelhill" value="chapelHill"/>Chapel Hill<br>
+					<input type="checkbox" name="other" value="other"/>Other<br><br> 
+					Notes:<br>
+					<input type="text" name="notes"><br><br>
+					<input type="submit" id="submit" name="submit" class="submit"><br>
+				</form>
+			</section>
+		</div>
+	</div>
+	<button class="btn" id="add-bubble">ADD</button>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<script>
+		var svg = d3.select("svg"),
+		margin = 5,
+		diameter = +svg.attr("width"),
+		g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+		var color = d3.scaleLinear()
+		.domain([-1,5])
+		.range(["hsl(130,80%,100%)", "hsl(230,20%,40%)"])
+		.interpolate(d3.interpolateHcl);
+
+		var pack = d3.pack()
+		.size([diameter - margin, diameter - margin])
+		.padding(15);	
+		var triangle = {
+  "name": "Triangle Ecosystem",
+  "children": [
+    {
+      "name": "Accelerators / Incubators",
+      "children": [
+        {
+          "name": "Ag Tech",
+          "size": 175,
+          "location": "Durham"
+        },
+        {
+          "name": "Biolabs",
+          "size": 175,
+          "location": "Durham"
+        },
+        {
+          "name": "Bootstrap Advisors",
+          "size": 425,
+          "location": "Durham"
+        },
+        {
+          "name": "Bunkerlabs",
+          "size": 250,
+          "location": "RDU"
+        },
+        {
+          "name": "Cofounders Capital",
+          "size": 450,
+          "location": "Cary"
+        },
+        {
+          "name": "Entredot",
+          "size": 200,
+          "location": "RTP"
+        },
+        {
+          "name": "First Flight Venture Center",
+          "size": 675,
+          "location": "RTP"
+        },
+        {
+          "name": "Groundworks Lab",
+          "size": 375,
+          "location": "Durham"
+        },
+        {
+          "name": "Launch Chapel Hill",
+          "size": 450,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "Innovators Program",
+          "size": 450,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Stampede",
+          "size": 200,
+          "location": "Durham"
+        },
+        {
+          "name": "The Pink Ceiling",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Thinkhouse",
+          "size": 250,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Wireless Center",
+          "size": 375,
+          "location": "WakeForest"
+        }
+      ]
+    },
+    {
+      "name": "Meet Ups",
+      "children": [
+        {
+          "name": "One Million Cups",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Exit Event",
+          "size": 250,
+          "location": "Durham"
+        },
+        {
+          "name": "R!ot",
+          "size": 100,
+          "location": "RTP",
+          "children": [
+            {
+              "name": "The center of IoT in Raleigh",
+              "contactInfo": "919-204-5401",
+              "size": 300,
+              "imageUrl": "images/riot.png"
+            }
+          ]
+        },
+        {
+          "name": "RTP 180",
+          "size": 175,
+          "location": "RTP"
+        },
+        {
+          "name": "Start Up Grind",
+          "size": 350,
+          "location": "RDU"
+        },
+        {
+          "name": "Triangle Tech Breakfast",
+          "size": 575,
+          "location": "RDU"
+        },
+        {
+          "name": "Ag Tech Accelerator",
+          "size": 475,
+          "location": "Durham"
+        }
+      ]
+    },
+    {
+      "name": "Support Organizations",
+      "children": [
+        {
+          "name": "Blackstone Entrepreneurs",
+          "size": 600,
+          "location": "Durham, Chapel Hill"
+        },
+        {
+          "name": "NC Center of Innovation",
+          "size": 575,
+          "location": "RTP"
+        },
+        {
+          "name": "Council for Entrepreneurial Development",
+          "size": 1100,
+        },
+        {
+          "name": "NC Biotech Center",
+          "size": 425,
+          "location": "RTP"
+        },
+        {
+          "name": "NC Idea Foundation",
+          "size": 450,
+          "location": "Durham"
+        },
+        {
+          "name": "NC Biosciences Organization",
+          "size": 1200,
+          "location": "RTP"
+        },
+        {
+          "name": "Research Triangle Cleantech",
+          "size": 675,
+          "location": "Cary"
+        },
+        {
+          "name": "Small Business and Tech Development Center",
+          "size": 1500,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Soar Triangle",
+          "size": 325,
+          "location": "Durham"
+        },
+        {
+          "name": "Southeast Bio",
+          "size": 325,
+          "location": "Raleigh"
+        },
+        {
+          "name": "SE Medical Device Assn",
+          "size": 550,
+          "location": "Roswell, GA"
+        }
+      ]
+    },
+    {
+      "name": "Funders",
+      "children": [
+        {
+          "name": "Carolina Angel Network",
+          "size": 550,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "Charleston Angel Partners",
+          "size": 625,
+          "location": "Charleston, SC"
+        },
+        {
+          "name": "Duke Angel Network",
+          "size": 450,
+          "location": "Durham"
+        },
+        {
+          "name": "IMAF-RTP",
+          "size": 200,
+          "location": "RTP"
+        },
+        {
+          "name": "Investors' Circle",
+          "size": 425,
+          "location": "Durham"
+        },
+        {
+          "name": "Piedmont Angel Network",
+          "size": 550,
+          "location": "Winston Salem"
+        },
+        {
+          "name": "RTP Capital",
+          "size": 275,
+          "location": "Durham"
+        },
+        {
+          "name": "The Launch Place",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Triangle Angel Partners",
+          "size": 675,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "Venture South",
+          "size": 325,
+          "location": "Greenville, SC"
+        },
+        {
+          "name": "Wolfpack Investor Network",
+          "size": 625,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Danville Angel Investors",
+          "size": 600,
+          "location": "USA"
+        },
+        {
+          "name": "NC Biotech Center",
+          "size": 425,
+          "location": "RTP"
+        },
+        {
+          "name": "NCSU Chancellor's Innovation Fund",
+          "size": 825,
+          "location": "Raleigh"
+        },
+        {
+          "name": "SBIR / STTP",
+          "size": 275,
+          "location": "Washington, DC"
+        },
+        {
+          "name": "Alexandria Real Estate Equities",
+          "size": 775,
+          "location": "RTP"
+        },
+        {
+          "name": "Bull City Venture Partners",
+          "size": 650,
+          "location": "Durham"
+        },
+        {
+          "name": "Cofounders Capital and Lab",
+          "size": 650,
+          "location": "Cary"
+        },
+        {
+          "name": "Echo Health Ventures",
+          "size": 500,
+          "location": "Durham"
+        },
+        {
+          "name": "Excelerate Health Ventures",
+          "size": 650,
+          "location": "RTP"
+        },
+        {
+          "name": "Full Tilt Capital",
+          "size": 425,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Hatteras Venture Partners",
+          "size": 625,
+          "location": "Durham"
+        },
+        {
+          "name": "IDEA Fund Partners",
+          "size": 450,
+          "location": "Durham"
+        },
+        {
+          "name": "Pappas Capital",
+          "size": 350,
+          "location": "Durham"
+        },
+        {
+          "name": "Rex Health Ventures",
+          "size": 475,
+          "location": "Raleigh"
+        },
+        {
+          "name": "River Cities Capital Funds",
+          "size": 650,
+          "location": "Raleigh"
+        },
+        {
+          "name": "SJF Ventures",
+          "size": 300,
+          "location": "Durham"
+        },
+        {
+          "name": "Tidewater Equity Partners",
+          "size": 625,
+          "location": "Winston Salem"
+        }
+      ]
+    },
+    {
+      "name": "Universities",
+      "children": [
+        {
+          "name": "North Carolina State University",
+          "children": [
+            {
+              "name": "Wolfpack Investor Network",
+              "size": 400,
+              "location": "Raleigh"
+            },
+            {
+              "name": "Chancellor's Innovation Fund",
+              "size": 400,
+              "location": "Raleigh"
+            },
+            {
+              "name": "Springboard Innovation Hub",
+              "size": 400,
+              "location": "Raleigh"
+            },
+            {
+              "name": "Entrepreneurship Initiative / Garage",
+              "size": 400,
+              "location": "Raleigh"
+            }
+          ]
+        },
+        {
+          "name": "Duke University",
+          "children": [
+            {
+              "name": "Duke Angel Network",
+              "size": 400,
+              "location": "Durham"
+            },
+            {
+              "name": "DUHATC",
+              "size": 400,
+              "location": "Durham"
+            },
+            {
+              "name": "Innovation and Entrepreneurship Initiative",
+              "size": 500,
+              "location": "Durham"
+            },
+            {
+              "name": "Duke Startup Challenge",
+              "size": 400,
+              "location": "Durham"
+            }
+          ]
+        },
+        {
+          "name": "UNC Chapel Hill",
+          "children": [
+            {
+              "name": "Carolina Angel Network",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "Carolina Challenge",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "Carolina KickStart",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "Launching the Venture",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "Launch Chapel Hill",
+              "size": 400,
+              "location": "Chapel Hill"
+            },
+            {
+              "name": "1789 Venture Lab",
+              "size": 400,
+              "location": "Chapel Hill"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corporate",
+      "children": [
+        {
+          "name": "Citrix",
+          "size": 400,
+          "location": "USA"
+        },
+        {
+          "name": "Cisco",
+          "size": 400,
+          "location": "San Jose, CA"
+        },
+        {
+          "name": "Cherokee",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Quintiles",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "LabCorp",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "Fidelity",
+          "size": 400,
+          "location": "RTP"
+        },
+        {
+          "name": "RedHat",
+          "size": 400,
+          "location": "Raleigh"
+        }
+      ]
+    },
+    {
+      "name": "Co-Working",
+      "children": [
+        {
+          "name": "Perch",
+          "size": 400,
+          "location": "Carrboro"
+        },
+        {
+          "name": "Cofounders Capital & Lab",
+          "size": 400,
+          "location": "Cary"
+        },
+        {
+          "name": "1789 Venture Lab",
+          "size": 400,
+          "location": "Chapel Hill"
+        },
+        {
+          "name": "American Underground",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "Biolabs",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "iNvictus",
+          "size": 400,
+          "location": "Durham"
+        },
+        {
+          "name": "HQ",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Industrious",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Loading Dock",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Nest",
+          "size": 400,
+          "location": "Raleigh"
+        },
+        {
+          "name": "Frontier",
+          "size": 400,
+          "location": "RTP"
+        }
+      ]
+    }
+  ]
+};/**d3.json("/triangle.json", function(error, root) {
+			if (error) throw error;
+			return root;
+		});*/
+		root = d3.hierarchy(triangle)
+		.sum(function(d) { return d.size; })
+		.sort(function(a, b) { return b.value - a.value; });
+
+		var focus = root,
+		nodes = pack(root).descendants(),
+		view;
+
+		var circle = g.selectAll("circle")
+		.data(nodes)
+		.enter().append("circle")
+		.attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+		.style("fill", function(d) { 
+			return d.children ? color(d.depth) : null;})
+		.on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+
+		var text = g.selectAll("text")
+		.data(nodes)
+		.enter().append("text")
+		.attr("class", "label")
+		.style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+		.style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+		.text(function(d) { return d.data.name; });// +": " + d.data.contactInfo; });
+
+		var node = g.selectAll("circle,text");
+
+		svg
+		.style("background", color(-1))
+		.on("click", function() { zoom(root); });
+
+		zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+		function zoom(d) {
+			var focus0 = focus; focus = d;
+
+			var transition = d3.transition()
+			.duration(d3.event.altKey ? 7500 : 750)
+			.tween("zoom", function(d) {
+				var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+				return function(t) { zoomTo(i(t)); };
+			});
+
+			transition.selectAll("text")
+			.filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+			.style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+			.on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+			.on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+		}
+
+		function zoomTo(v) {
+			var k = diameter / v[2]; view = v;
+			node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+			circle.attr("r", function(d) { return d.r * k; });
+		}
+		var closePopup = document.getElementById("popupclose");
+		var overlay = document.getElementById("overlay");
+		var popup = document.getElementById("popup");
+		var button = document.getElementById("add-bubble");
+		closePopup.onclick = function() {
+			overlay.style.display = 'none';
+			popup.style.display = 'none';
+		};
+		button.onclick = function() {
+			popup.style.display = 'block';
+		}
+	</script>
+</body>
+</html>
