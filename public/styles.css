@@ -61,14 +61,18 @@ div {
   display: none;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 56%;
   color: black;
   background-color: white;
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   margin-left: -250px; /*Half the value of width to center div*/
   margin-top: -250px; /*Half the value of height to center div*/
   z-index: 200;
+}
+
+input {
+  border-radius: 10px;
 }
 
 #popupHeader {
@@ -138,11 +142,15 @@ div {
 }
 
 #submit {
-  background-color: white;
-  color: black;
-  border-color: black;
-  border-width: 1px;
-  border-radius: 7px;
+  padding: 5px;
+  background-color: #ff7652;
+  color: white;
+  border-radius: 15px;
+  height: 50px;
+  width: 100x;
+  font-family: 'Helvetica', serif;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .node {
